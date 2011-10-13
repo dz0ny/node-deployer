@@ -2,12 +2,12 @@
   "name": "node-deployer",
   "description": "Node.js deployment tool, inspired by Ruby's Capistrano.",
   "version": "0.0.1",
-  "homepage": "http://github.com:plainprogrammer/node-deployer",
+  "homepage": "http://github.com/plainprogrammer/node-deployer",
   "author": "James Thompson <james@plainprograms.com>",
   "keywords": ["deployment","deploy","capistrano"],
   "repository": {
     "type": "git",
-    "url": "http://github.com:plainprogrammer/node-deployer.git"
+    "url": "git://github.com/plainprogrammer/node-deployer.git"
   },
   "dependencies": {
     "control": "0.2.x",
