@@ -1,0 +1,35 @@
+node-deployer
+=============
+
+Deployer is a deployment tool for Node.js that is inspired by Ruby's
+Capistrano. The whole tool is designed to be simple and sane in its function
+and its defaults.
+
+Deployment Defaults
+-------------------
+
+The command line utility parses your projects package.json to establish its
+defaults. Only three options are necessary to get fully automated deployments.
+Simply add a block like the following in your project's package.json:
+
+  {
+    "deployer": {
+      "host": "server.example.org",
+      "user": "deploy",
+      "repo": "git://example.org:example/app.git"
+    }
+  }
+  
+Whatever you specify in the deployer block will be used as the defaults for
+the deploy command.
+
+Overriding Defaults
+-------------------
+
+You can override the defaults provided in your package.json using these
+options with the deploy command:
+
+  -H, --host     Host to deploy to
+  -U, --user     User to deploy with
+  -R, --repo     Repository to deploy from
+  
