@@ -28,15 +28,18 @@ var fs       = require('fs'),
     control  = require('control');
     
 var root = cwd = process.cwd()    
-    
-var package_file = fs.readFileSync(root + '/package.json', 'utf8');
+
+var deployer_package_file = fs.readFileSync(__dirname +'/../package.json', 'utf8');
+var deployer_package_json = JSON.parse(deployer_package_file);
+
+var package_file = fs.readFileSync(root +'/package.json', 'utf8');
 var package_json = JSON.parse(package_file);
     
 program
   .option('-H, --host', 'Host to deploy to')
   .option('-U, --user', 'User to deploy with')
   .option('-R, --repo', 'Repository to deploy from')
-  .version(package_json.version)
+  .version(deployer_package_json.version)
   .parse(process.argv);
   
 var deploy_host = program.host,
