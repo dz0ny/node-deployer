@@ -24,66 +24,18 @@
 
 var fs       = require('fs'),
     path     = require('path'),
-    program  = require('commander'),
-    control  = require('control');
-    
-var root = cwd = process.cwd()    
+    program  = require('commander');
+
+var Deployer = require(__dirname +'/../lib/deployer').Deployer;
 
 var deployer_package_file = fs.readFileSync(__dirname +'/../package.json', 'utf8');
 var deployer_package_json = JSON.parse(deployer_package_file);
 
-var package_file = fs.readFileSync(root +'/package.json', 'utf8');
-var package_json = JSON.parse(package_file);
-    
 program
   .option('-H, --host', 'Host to deploy to')
   .option('-U, --user', 'User to deploy with')
   .option('-R, --repo', 'Repository to deploy from')
   .version(deployer_package_json.version)
   .parse(process.argv);
-  
-var deploy_host = program.host,
-    deploy_user = program.user,
-    deploy_repo = program.repo;
 
-    
-if (program.host == '' || program.host == undefined) {
-  if (package_json.deployer != '' && package_json.deployer != undefined) {
-    deploy_host = package_json.deployer.host;
-  }
-} else {
-  deploy_host = program.host;
-}
-
-if (deploy_host == '' || deploy_host == undefined) {
-  console.error('You must supply a host either in your package.json or via the -H option.');
-  process.exit(1);
-}
-
-
-if (program.user == '' || program.user == undefined) {
-  if (package_json.deployer != '' && package_json.deployer != undefined) {
-    deploy_user = package_json.deployer.user;
-  }
-} else {
-  deploy_user = program.user;
-}
-
-if (deploy_user == '' || deploy_user == undefined) {
-  console.error('You must supply a user either in your package.json or via the -U option.');
-  process.exit(1);
-}
-
-
-if (program.repo == '' || program.repo == undefined) {
-  if (package_json.deployer != '' && package_json.deployer != undefined) {
-    deploy_repo = package_json.deployer.repo;
-  }
-} else {
-  deploy_repo = program.repo;
-}
-
-if (deploy_repo == '' || deploy_repo == undefined) {
-  console.error('You must supply a repo either in your package.json or via the -R option.');
-  process.exit(1);
-}
+var deployer = new Deployer(process.cwd(), program);
