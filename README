@@ -24,6 +24,20 @@ or in a file named config/config.json in your project:
 Whatever you specify in the deployer block will be used as the defaults for
 the deploy command.
 
+You can also supply project dependencies in one of two ways. You can supply
+them in the package.json, in which case NPM will handle them during deployment.
+Or, you can add a dependencies section to the file name config/config.json in
+you project. The format of the dependencies block is the same either way. Here
+is an example:
+
+  {
+    "dependencies": {
+      "http-proxy": null,
+      "commander": "~0.2",
+      "control": "0.2.1"
+    }
+  }
+
 Overriding Defaults
 -------------------
 
