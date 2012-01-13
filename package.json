@@ -1,7 +1,7 @@
 {
   "name": "deployer",
   "description": "An automated deployment tool",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "http://github.com/plainprogrammer/node-deployer",
   "author": "James Thompson <james@plainprograms.com>",
   "keywords": ["deployment","deploy","capistrano"],

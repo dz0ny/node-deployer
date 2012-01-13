@@ -1,9 +1,8 @@
 node-deployer
 =============
 
-Deployer is a deployment tool for Node.js that is inspired by Ruby's
-Capistrano. The whole tool is designed to be simple and sane in its function
-and its defaults.
+Deployer is a deployment tool for Node.js The whole tool is designed to be
+simple and sane in its function and its defaults.
 
 Deployment Defaults
 -------------------
@@ -13,10 +12,11 @@ defaults. Only three options are necessary to get fully automated deployments.
 Simply add a block like the following in your project's package.json:
 
   {
-    "deployer": {
+    "deployment": {
       "host": "server.example.org",
       "user": "deploy",
-      "repo": "git://example.org:example/app.git"
+      "repo": "git://example.org:example/app.git",
+      "path": "/var/sites"
     }
   }
   
