@@ -39,3 +39,5 @@ program
   .parse(process.argv);
 
 var deployer = new Deployer(process.cwd(), program);
+
+deployer.deploy;
