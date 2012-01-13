@@ -1,6 +1,6 @@
 {
   "name": "deployer",
-  "description": "An automated deployment tool, inspired by Ruby's Capistrano.",
+  "description": "An automated deployment tool",
   "version": "0.0.3",
   "homepage": "http://github.com/plainprogrammer/node-deployer",
   "author": "James Thompson <james@plainprograms.com>",
