@@ -40,4 +40,4 @@ program
 
 var deployer = new Deployer(process.cwd(), program);
 
-deployer.deploy;
+deployer.deploy();

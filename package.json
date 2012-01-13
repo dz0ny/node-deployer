@@ -1,7 +1,7 @@
 {
   "name": "deployer",
   "description": "An automated deployment tool",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "homepage": "http://github.com/plainprogrammer/node-deployer",
   "author": "James Thompson <james@plainprograms.com>",
   "keywords": ["deployment","deploy","capistrano"],
@@ -10,14 +10,26 @@
     "url": "git://github.com/plainprogrammer/node-deployer.git"
   },
   "dependencies": {
-    "control": "0.2.x",
-    "commander": "0.2.x"
+    "control": "~0.2",
+    "commander": "~0.2"
   },
   "devDependencies": {
     
   },
-  "bin": {
-    "deploy": "./bin/deploy"
+  "directories": {
+    "lib": "./lib",
+    "bin": "./bin"
   },
-  "engine": [ "node >=0.4.1" ]
+  "main": "./lib/deployer.js",
+  "bin": "./bin/deploy",
+  "engines": {
+    "node": "0.6",
+    "npm": "1"
+  },
+  "licenses": [
+    {
+      "type": "MIT +no-false-attribs",
+      "url": "http://github.com/plainprogrammer/node-deployer/raw/master/LICENSE"
+    }
+  ]
 }

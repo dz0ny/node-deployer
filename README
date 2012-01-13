@@ -9,7 +9,8 @@ Deployment Defaults
 
 The command line utility parses your projects package.json to establish its
 defaults. Only three options are necessary to get fully automated deployments.
-Simply add a block like the following in your project's package.json:
+Simply add a block like the following into either your project's package.json,
+or in a file named config/config.json in your project:
 
   {
     "deployment": {
@@ -33,3 +34,22 @@ options with the deploy command:
   -U, --user     User to deploy with
   -R, --repo     Repository to deploy from
   
+Callbacks
+---------
+
+You can provide certain callbacks that will be invoked at different stages of
+the deployment cycle in order to customize behavior of Deployer. All callbacks
+are passed the Deployer object and, so, have access to all its properties and
+functions. The supported callbacks are as follows, in order of when they're
+called:
+
+  * beforeDeploy()
+  * beforeClone()
+  * afterClone()
+  * beforeRestart()
+  * onRestart()
+  * afterRestart()
+  * afterDeploy()
+
+You can define your callbacks by setting them up as exports in a file at
+config/deployer.js within your project.
