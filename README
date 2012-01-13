@@ -46,6 +46,8 @@ called:
   * beforeDeploy()
   * beforeClone()
   * afterClone()
+  * beforeNPM()
+  * afterNPM()
   * beforeRestart()
   * onRestart()
   * afterRestart()
