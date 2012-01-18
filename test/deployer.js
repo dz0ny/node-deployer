@@ -78,4 +78,21 @@ describe('new Deployer()', function() {
     deployer.user.should.equal('deployer');
     deployer.repo.should.equal('git://example.com:example/app.git');
   });
+
+  it('loads callbacks from config/deployer.js', function() {
+    var fixture_root = path.resolve(__dirname, 'fixtures/callbacks_config');
+    var mock_program = {};
+
+    var deployer = new Deployer(fixture_root, mock_program);
+
+    deployer.callbacks.beforeDeploy().should.equal(true);
+    deployer.callbacks.beforeClone().should.equal(true);
+    deployer.callbacks.afterClone().should.equal(true);
+    deployer.callbacks.beforeNPM().should.equal(true);
+    deployer.callbacks.afterNPM().should.equal(true);
+    deployer.callbacks.beforeRestart().should.equal(true);
+    deployer.callbacks.onRestart().should.equal(true);
+    deployer.callbacks.afterRestart().should.equal(true);
+    deployer.callbacks.afterDeploy().should.equal(true);
+  });
 });
