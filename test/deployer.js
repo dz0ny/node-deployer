@@ -1,8 +1,6 @@
 var path     = require('path'),
     Deployer = require('../lib/deployer').Deployer;
 
-Deployer.prototype._confirmSetup = function() {};
-
 describe('new Deployer()', function() {
   it('gets its configuration from package.json', function() {
     var fixture_root = path.resolve(__dirname, 'fixtures/package_config');
