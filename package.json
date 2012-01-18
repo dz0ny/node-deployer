@@ -14,7 +14,8 @@
     "commander": "~0.2"
   },
   "devDependencies": {
-    
+    "mocha": "~0.10",
+    "should": "~0.5"
   },
   "directories": {
     "lib": "./lib",

@@ -1,0 +1,8 @@
+{
+  "deployment": {
+    "host": "server.example.com",
+    "user": "deployer",
+    "repo": "git://example.com:example/app.git",
+    "path": "/var/apps"
+  }
+}
